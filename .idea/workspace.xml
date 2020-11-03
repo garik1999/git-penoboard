@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c7ebf61e-6c69-422c-8f0b-9b9f2db77b67" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jPWaJ4OKyFonCQdp4Q7hvypwkB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7ebf61e-6c69-422c-8f0b-9b9f2db77b67" name="Default Changelist" comment="" />
+      <created>1603706269926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603706269926</updated>
+      <workItem from="1603706271166" duration="252000" />
+      <workItem from="1603706669482" duration="492000" />
+      <workItem from="1603707536016" duration="377000" />
+      <workItem from="1604310744992" duration="328000" />
+      <workItem from="1604311105035" duration="16715000" />
+      <workItem from="1604390515658" duration="5815000" />
+      <workItem from="1604398545699" duration="283000" />
+      <workItem from="1604398836710" duration="3219000" />
+      <workItem from="1604412668421" duration="1927000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604320336730">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604320336730" />
+    <state x="469" y="310" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1604398826179">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="469" y="310" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604398826179" />
+    <state x="124" y="113" key="SettingsEditor" timestamp="1604416706556">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="221" y="68" key="SettingsEditor/0.23.1440.811@0.23.1440.811" timestamp="1603706959212" />
+    <state x="221" y="68" key="SettingsEditor/0.23.1440.812@0.23.1440.812" timestamp="1603706626189" />
+    <state x="235" y="69" key="SettingsEditor/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604398748654" />
+    <state x="124" y="113" key="SettingsEditor/0.23.1440.877/-1920.23.1920.1002@0.23.1440.877" timestamp="1604416706556" />
+  </component>
+</project>
