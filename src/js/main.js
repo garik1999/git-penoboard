@@ -1,13 +1,11 @@
 $(document).ready(function() {
   $('#select_l').niceSelect();
-  // $('#scene').parallax();
 
   let image = document.getElementsByClassName('js-scene');
   new simpleParallax(image, {
     scale: 1.3,
     transition: 'cubic-bezier(0,0,0,1)'
   });
-
 
   $('.slider').slick({
     nextArrow: false,
@@ -20,7 +18,6 @@ $(document).ready(function() {
     autoplay: false,
     autoplaySpeed: 3000,
   });
-
 
   particlesJS("background", {
     particles: {
@@ -139,13 +136,7 @@ $(document).ready(function() {
     'wrapAround': true
   })
 
-  // $(window).scroll(function (e) {
-  //
-  //
-  // })
-
-
-let flag = true
+  let flag = true
   $(window).scroll(function(){
     if ( $(this).scrollTop() > $('.section-data').offset().top - 300 && flag ) {
       $('.counting').each(function() {
@@ -169,21 +160,11 @@ let flag = true
     }
   });
 
-
   $(window).scroll(function (e) {
-    var $bot,
-        top,
-        bottom;
-    $bot = $('.section-data');
-    top = $bot.position().top + ($bot.height());
-    bottom = top + $bot.outerHeight(true);
-
-    console.log(bottom)
     let target = e.currentTarget,
         $self = $(target),
         scrollTop = window.pageYOffset || target.scrollTop,
-        lastScrollTop = $self.data("lastScrollTop") || 0,
-        scrollHeight = target.scrollHeight || document.body.scrollHeight;
+        lastScrollTop = $self.data("lastScrollTop") || 0;
 
     if (scrollTop > lastScrollTop) {
         $('header').addClass('min');
@@ -228,12 +209,10 @@ let flag = true
     $('body').css({'overflow': 'hidden'});
   });
 
-
   $('.modal__close, .overlay').on('click', function () {
     $(this).parents('.modal').fadeOut();
     $('body').removeAttr('style');
   });
-
 
   $('#open_menu').on('click', function () {
     $('.mob-menu').addClass('open');
@@ -246,5 +225,4 @@ let flag = true
     $('header .overlay').removeClass('open');
     $('body').removeAttr('style');
   });
-
 });
