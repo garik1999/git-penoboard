@@ -11,11 +11,11 @@
       <div id="form_login_user" class="form">
         <div class="form-row">
           <label for="user_login">Ваш email</label>
-          <input id="user_login" name="tel" type="text" placeholder="mikel_ivanov98@gmail.com">
+          <input id="user_login" data-input="email" name="tel" type="text" placeholder="mikel_ivanov98@gmail.com">
         </div>
         <div class="form-row">
           <label for="user_password">Пароль</label>
-          <input id="user_password" name="pass" type="password" placeholder="*************">
+          <input id="user_password" data-input="password" name="pass" type="password" placeholder="*************">
         </div>
         <div class="form-row">
           <button class="btn submit-form authorization disabled" type="submit">Войти</button>
@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<div id="registration_modal" class="modal" style="display:none;">
+<div id="registration_modal" class="modal" style="display:block;">
   <div class="overlay"></div>
   <div class="body">
     <div class="body__inner">
@@ -38,15 +38,15 @@
       <div id="form_registration_user" class="form">
         <div class="form-row">
           <label for="user_reg_email">Ваш email</label>
-          <input id="user_reg_email" name="tel" type="text" placeholder="mikel_ivanov98@gmail.com">
+          <input id="user_reg_email" data-input="email" name="tel" type="text" placeholder="mikel_ivanov98@gmail.com">
         </div>
         <div class="form-row">
           <label for="user_reg_password">Пароль</label>
-          <input id="user_reg_password" name="pass" type="password" placeholder="*************">
+          <input id="user_reg_password" data-input="password" name="pass" type="password" placeholder="*************">
         </div>
         <div class="form-row">
           <label for="user_reg_password2">Пароль</label>
-          <input id="user_reg_password2" name="pass" type="password" placeholder="*************">
+          <input id="user_reg_password2" data-input="password2" name="pass" type="password" placeholder="*************">
         </div>
         <div class="form-row">
           <button class="btn submit-form registration disabled" type="submit">Войти</button>
