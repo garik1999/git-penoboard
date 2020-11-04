@@ -155,13 +155,22 @@ header {
     justify-content: space-between;
     li {
       position: relative;
-      width: 100%;
+      //width: 100%;
+      @media screen and (max-width: 1024px){
+        width: 100%;
+      }
       &:hover {
         .sub {
           opacity: 1;
           visibility: visible;
           margin-top: 0;
         }
+      }
+    }
+    li:last-child {
+      .sub {
+        right: 0;
+        left: auto;
       }
     }
     .sub {
@@ -212,6 +221,7 @@ header {
         visibility: visible;
         top: auto;
         left: auto;
+        right: auto;
         margin-top: 0;
         background-color: transparent;
         box-shadow: none;
