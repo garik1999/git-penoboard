@@ -18,7 +18,7 @@ let gulp = require("gulp"),
 	webp = require('gulp-webp'),
 	webphtml = require('gulp-webp-html'),
 	webpcss = require("gulp-webp-css"),
-	// terser = require("terser"), //то же, что cssmin, только для js
+	terser = require("gulp-terser"), //то же, что cssmin, только для js
 	concat = require("gulp-concat"), //склеивает css и js-файлы в один
 	del = require("del"), //удаляет указанные файлы и директории. Нужен для очистки перед билдом
 	// ttf2woff = require("gulp-ttf2woff"), //конвертирует шрифты в веб-формат
@@ -131,7 +131,7 @@ gulp.task("script", function () {
 		.pipe(size())
 		.pipe(babel())
 		.pipe(concat("libs.min.js"))
-		// .pipe(terser())
+		.pipe(terser())
 		.pipe(gulp.dest("build/js"))
 		.pipe(size());
 });
@@ -142,7 +142,7 @@ gulp.task("minjs", function () {
 		.src("src/js/*.js")
 		.pipe(size())
 		.pipe(babel())
-		// .pipe(terser())
+		.pipe(terser())
 		.pipe(
 			rename({
 				suffix: ".min",
