@@ -109,23 +109,23 @@ function initElement(form) {
 initElement('.form');
 
 
-class Validation {
-    constructor (form) {
-        this.form = form;
-    }
-    init() {
-        this.initElement();
-    }
-    initElement() {
-        let elements = this.form.find('input');
-        elements.each(function () {
-            let type = $(this).attr('type');
-            if(typeof type !== undefined){
-                config[type]($(this));
-                console.log(type)
-            }
-        });
-    }
-}
-const validate = new Validation($('.form'))
-console.log(validate.init())
+// class Validation {
+//     constructor (form) {
+//         this.form = form;
+//     }
+//     init() {
+//         this.initElement();
+//     }
+//     initElement() {
+//         let elements = this.form.find('input');
+//         elements.each(function () {
+//             let type = $(this).attr('type');
+//             if(typeof type !== undefined){
+//                 config[type]($(this));
+//                 console.log(type)
+//             }
+//         });
+//     }
+// }
+// const validate = new Validation($('.form'))
+// console.log(validate.init())
