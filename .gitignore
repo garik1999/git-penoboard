@@ -3,4 +3,4 @@
 build/components/
 build/scss/
 node_modules/
-/.idea/
+.idea

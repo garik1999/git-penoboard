@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7ebf61e-6c69-422c-8f0b-9b9f2db77b67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/libs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/libs.min.js" afterDir="false" />
@@ -9,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/build/js/validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/validate.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/webp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/webp.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/_modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_modals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/validate.js" afterDir="false" />
     </list>
@@ -72,7 +71,10 @@
       <workItem from="1604412668421" duration="2886000" />
       <workItem from="1604418915712" duration="806000" />
       <workItem from="1604477192361" duration="30273000" />
-      <workItem from="1604649907345" duration="6779000" />
+      <workItem from="1604649907345" duration="11234000" />
+      <workItem from="1604909084426" duration="2247000" />
+      <workItem from="1604913657781" duration="3039000" />
+      <workItem from="1604920659383" duration="7168000" />
     </task>
     <servers />
   </component>
@@ -80,6 +82,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="354" y="119" key="#Inspections" timestamp="1604915293996">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="354" y="119" key="#Inspections/0.23.1440.822@0.23.1440.822" timestamp="1604915293996" />
     <state x="184" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604320336730">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
@@ -99,9 +105,9 @@
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="518" y="355" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604586708648" />
-    <state x="385" y="169" width="670" height="676" key="search.everywhere.popup" timestamp="1604568029488">
+    <state x="385" y="169" width="670" height="676" key="search.everywhere.popup" timestamp="1604929056035">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state x="385" y="169" width="670" height="676" key="search.everywhere.popup/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604568029488" />
+    <state x="385" y="169" width="670" height="676" key="search.everywhere.popup/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604929056035" />
   </component>
 </project>

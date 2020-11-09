@@ -1,131 +1,234 @@
 const MAIL_FORMAT =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-// Отображает и скрывает подскзки
-const helpers = {
-    valid: function (el) {
-        el.find('.error').remove();
-        el.find('input').addClass('valid').removeClass('invalid');
-    },
-    invalid: function (el, text="") {
-        if(el.find('.error').length <= 0) {
-            el.append("<span class='error'>"+text+"</span>");
-        }
-        el.find('input').removeClass('valid').addClass('invalid');
-    }
-}
-// Определение типа елемента
-const config = {
-    email: function (el) {
-        setEvents(el, validationEmail, 'blur');
-    },
-    password: function (el) {
-        if(el.attr('data-equalTo') !== undefined) {
-            setEvents(el, validationPasswordTwo, 'blur');
-        } else {
-            setEvents(el, validationPassword, 'blur');
-        }
-    },
-    checkbox: function (el) {
-        setEvents(el, validationCheckBox, 'click');
-    },
-    text: function (el) {
-        setEvents(el, validationText, 'click');
-    }
-}
-// Объявление событий кождого из елементов
-function setEvents(el, callback, events = ""){
-    el.on(`input change ${events}`, function (){
-        callback(el);
-        formSubmit(el.parents('.form'));
-    });
-}
-// Финальная проверка валидности
-function formSubmit(el) {
-    let $input = el.find('input').length,
-        $input_valid = el.find('.valid').length,
-        $button = el.find('button, [type=submit]');
-    if($input === $input_valid) {
-        $button.removeClass('disabled');
-    } else {
-        $button.addClass('disabled');
-    }
-}
-// Валидация текстовых input
-function validationText(input) {
-    if(input.val().length >= 3) {
-        helpers.valid(input.parent());
-    } else {
-        helpers.invalid(input.parent(), 'Не менее 3 символов');
-    }
-}
-// Валидация поля checkbox
-function validationCheckBox(input){
-    if(input.prop('checked')) {
-        helpers.valid(input.parent());
-    } else {
-        helpers.invalid(input.parent(), 'Нужно согласится');
-    }
-}
-// Валидация поля Email
-function validationEmail(input) {
-    if(input.val().match(MAIL_FORMAT)) {
-        helpers.valid(input.parent());
-    } else {
-        helpers.invalid(input.parent(), "Не верный формат эмейл");
-    }
-}
-// Валидация поля Password
-function validationPassword(input) {
-    let name = input.attr('name')
-    input.parents('.form').find(`[data-equalTo=${name}]`).val('').blur();
-    if (input.val().length > 8) {
-        helpers.valid(input.parent());
-    } else {
-        helpers.invalid(input.parent(), "Минимум 8 символов");
-    }
-}
-// Валидация поля Password Confirm
-function validationPasswordTwo(input) {
-    let name = input.attr('data-equalTo');
-    if(typeof name !== undefined){
-        let $input_pass = input.parents('.form').find(`input[name='${name}']`);
-        if (input.val() === $input_pass.val()) {
-            helpers.valid(input.parent());
-        } else {
-            helpers.invalid(input.parent(), "Пароли не совпадают");
-        }
-    }
-}
-// Инициализация Валидации
-function initElement(form) {
-    let elements = $(`${form}`).find('input');
-    elements.each(function () {
-        let type = $(this).attr('type');
-        if(typeof type !== undefined){
-            config[type]($(this));
-        }
-    });
-}
-initElement('.form');
-
-
-// class Validation {
-//     constructor (form) {
-//         this.form = form;
-//     }
-//     init() {
-//         this.initElement();
-//     }
-//     initElement() {
-//         let elements = this.form.find('input');
-//         elements.each(function () {
-//             let type = $(this).attr('type');
-//             if(typeof type !== undefined){
-//                 config[type]($(this));
-//                 console.log(type)
-//             }
-//         });
+//
+// // Отображает и скрывает подскзки
+// const helpers = {
+//     valid: function (el) {
+//         el.find('.error').remove();
+//         el.find('input').addClass('valid').removeClass('invalid');
+//     },
+//     invalid: function (el, text="") {
+//         if(el.find('.error').length <= 0) {
+//             el.append("<span class='error'>"+text+"</span>");
+//         }
+//         el.find('input').removeClass('valid').addClass('invalid');
 //     }
 // }
-// const validate = new Validation($('.form'))
-// console.log(validate.init())
+// // Определение типа елемента
+// const config = {
+//     email: function (el) {
+//         setEvents(el, validationEmail, 'blur');
+//     },
+//     password: function (el) {
+//         if(el.attr('data-equalTo') !== undefined) {
+//             setEvents(el, validationPasswordTwo, 'blur');
+//         } else {
+//             setEvents(el, validationPassword, 'blur');
+//         }
+//     },
+//     checkbox: function (el) {
+//         setEvents(el, validationCheckBox, 'click');
+//     },
+//     text: function (el) {
+//         setEvents(el, validationText, 'click');
+//     }
+// }
+// // Объявление событий кождого из елементов
+// function setEvents(el, callback, events = ""){
+//     el.on(`input change ${events}`, function (){
+//         callback(el);
+//         formSubmit(el.parents('.form'));
+//     });
+// }
+// // Финальная проверка валидности
+// function formSubmit(el) {
+//     let $input = el.find('input').length,
+//         $input_valid = el.find('.valid').length,
+//         $button = el.find('button, [type=submit]');
+//     if($input === $input_valid) {
+//         $button.removeClass('disabled');
+//     } else {
+//         $button.addClass('disabled');
+//     }
+// }
+// // Валидация текстовых input
+// function validationText(input) {
+//     if(input.val().length >= 3) {
+//         helpers.valid(input.parent());
+//     } else {
+//         helpers.invalid(input.parent(), 'Не менее 3 символов');
+//     }
+// }
+// // Валидация поля checkbox
+// function validationCheckBox(input){
+//     if(input.prop('checked')) {
+//         helpers.valid(input.parent());
+//     } else {
+//         helpers.invalid(input.parent(), 'Нужно согласится');
+//     }
+// }
+// // Валидация поля Email
+// function validationEmail(input) {
+//     if(input.val().match(MAIL_FORMAT)) {
+//         helpers.valid(input.parent());
+//     } else {
+//         helpers.invalid(input.parent(), "Не верный формат эмейл");
+//     }
+// }
+// // Валидация поля Password
+// function validationPassword(input) {
+//     let name = input.attr('name')
+//     input.parents('.form').find(`[data-equalTo=${name}]`).val('').blur();
+//     if (input.val().length > 8) {
+//         helpers.valid(input.parent());
+//     } else {
+//         helpers.invalid(input.parent(), "Минимум 8 символов");
+//     }
+// }
+// // Валидация поля Password Confirm
+// function validationPasswordTwo(input) {
+//     let name = input.attr('data-equalTo');
+//     if(typeof name !== undefined){
+//         let $input_pass = input.parents('.form').find(`input[name='${name}']`);
+//         if (input.val() === $input_pass.val()) {
+//             helpers.valid(input.parent());
+//         } else {
+//             helpers.invalid(input.parent(), "Пароли не совпадают");
+//         }
+//     }
+// }
+// // Инициализация Валидации
+// function initElement(form) {
+//     let elements = $(`${form}`).find('input');
+//     elements.each(function () {
+//         let type = $(this).attr('type');
+//         if(typeof type !== undefined){
+//             config[type]($(this));
+//         }
+//     });
+// }
+// initElement('.form');
+//
+
+
+
+
+
+
+
+class Validation {
+    constructor (form) {
+        this.form = form;
+    }
+    setEvents($el, callback, events = ""){
+        let self = this;
+
+        $el.on(`input change ${events}`, function (){
+            callback($el, self);
+            self.formSubmit($el);
+        });
+    }
+    formSubmit(input) {
+        let $child = null;
+        this.form.each(function () {
+            if($(this).find($(input)).length > 0){
+                $child = $(this);
+            }
+        });
+        let $input = $child.find('input').length,
+            $input_valid = $child.find('.valid').length,
+            $button = $child.find('button, [type=submit]');
+        if($input === $input_valid) {
+            $button.removeClass('disabled');
+        } else {
+            $button.addClass('disabled');
+        }
+    }
+    validationEmail(input, self) {
+        if(input.val().match(MAIL_FORMAT)) {
+            self.initHelpers(input, true)
+        } else {
+            self.initHelpers(input, false, 'Пока')
+        }
+    }
+    validationPassword(input, self) {
+        let name = input.attr('name')
+        input.parents('.form').find(`[data-equalTo=${name}]`).val('').blur();
+        if (input.val().length > 8) {
+            self.initHelpers(input, true)
+        } else {
+            self.initHelpers(input, false, 'Минимум 8 символов')
+        }
+    }
+    validationPasswordTwo(input, self) {
+        let name = input.attr('data-equalTo');
+        if(typeof name !== undefined){
+            let $input_pass = input.parents('.form').find(`input[name='${name}']`);
+            if (input.val() === $input_pass.val()) {
+                self.initHelpers(input, true)
+            } else {
+                self.initHelpers(input, false, 'Пароли не совпадают')
+            }
+        }
+    }
+    validationCheckBox(input, self){
+        if(input.prop('checked')) {
+            self.initHelpers(input, true)
+        } else {
+            self.initHelpers(input, false, 'Нужно согласится')
+        }
+    }
+    validationText(input, self) {
+        if(input.val().length >= 3) {
+            self.initHelpers(input, true)
+        } else {
+            self.initHelpers(input, false, 'Не менее 3 символов')
+        }
+    }
+    initHelpers(input, valid, text = "Ошибка"){
+        let parent = input.parent(),
+            parentError = parent.find('.error')
+        if(valid) {
+            parentError.remove();
+            input.addClass('valid').removeClass('invalid');
+        } else {
+            if(parentError.length <= 0) {
+                parent.append(`<span class="error">${text}</span>`);
+            }
+            input.removeClass('valid').addClass('invalid');
+        }
+    }
+
+    initElement(self = this) {
+        let elements = this.form.find('input');
+        let arr = [];
+        elements.each(function () {
+            let type = $(this).attr('type'),
+                $el = $(this);
+            if(typeof type !== undefined){
+                switch (type) {
+                    case 'email':
+                        self.setEvents($el, self.validationEmail);
+                        break;
+                    case 'password':
+                        if($el.attr('data-equalTo') !== undefined) {
+                            self.setEvents($el, self.validationPasswordTwo)
+                        } else {
+                            self.setEvents($el, self.validationPassword)
+                        }
+                        break;
+                    case 'checkbox':
+                        self.setEvents($el, self.validationCheckBox);
+                        break;
+                    case 'text':
+                        self.setEvents($el, self.validationCheckBox);
+                        break;
+                    default:
+                        self.setEvents($el, self.validationText)
+                        break;
+                }
+            }
+        });
+    }
+}
+const validate = new Validation($('.form'))
+validate.initElement()
