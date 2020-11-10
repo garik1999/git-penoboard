@@ -1,4 +1,4 @@
-const MAIL_FORMAT =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+// const MAIL_FORMAT = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 //
 // // Отображает и скрывает подскзки
 // const helpers = {
@@ -109,15 +109,71 @@ const MAIL_FORMAT =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
 // initElement('.form');
 //
 
-
-
-
-
-
-
 class Validation {
-    constructor (form) {
+    constructor (form, options) {
         this.form = form;
+
+        this.options = Object.assign({
+            Empty: {
+                helpers: {
+                    empty: "Нужно заполнить"
+                }
+            },
+            validationClass: {
+                success: "valid",
+                error: "invalid",
+                helpers: {
+                    class: "error"
+                }
+            },
+            Email: {
+                helpers: {
+                    format: "Неверный формат"
+                },
+                format: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+            },
+            Password: {
+                helpers: {
+                    minLength: "Слишком короткий пароль",
+                    maxLength: "Слишком длинный пароль"
+                },
+                minLength:
+                    Number($('input[data-MinlengthPass]').attr('data-MinlengthPass')) || 8,
+                maxLength:
+                    Number($('input[data-MaxlengthPass]').attr('data-MaxlengthPass')) || 10,
+            },
+            PasswordConfirm: {
+                helpers: {
+                    confirm: 'Пароли не совпадают'
+                },
+            },
+            Checkbox: {
+                helpers: {
+                    check: "Нужно согласие"
+                },
+            },
+            Name: {
+                helpers: {
+                    minLength: "Слишком короткое имя",
+                    maxLength: "Слишком длинное имя"
+                },
+                minLength:
+                    Number($('input[data-MinlengthName]').attr('data-MinlengthName')) || 3,
+                maxLength:
+                    Number($('input[data-MaxlengthName]').attr('data-MaxlengthName')) || 10,
+            },
+            Surname: {
+                helpers: {
+                    minLength: "Слишком короткая Фамилия",
+                    maxLength: "Слишком длинная Фамилия"
+                },
+                minLength:
+                    Number($('input[data-MinlengthSurname]').attr('data-MinlengthSurname')) || 3,
+                maxLength:
+                    Number($('input[data-MaxlengthSurname]').attr('data-MaxlengthSurname')) || 10,
+            },
+        }, options || {});
+        console.log(this.options.Password.minLength)
     }
     setEvents($el, callback, events = ""){
         let self = this;
@@ -130,43 +186,42 @@ class Validation {
     formSubmit(input) {
         let $child = null;
         this.form.each(function () {
-            if($(this).find($(input)).length > 0){
+            if ($(this).find($(input)).length > 0) {
                 $child = $(this);
             }
         });
-        let $input = $child.find('input').length,
-            $input_valid = $child.find('.valid').length,
-            $button = $child.find('button, [type=submit]');
-        if($input === $input_valid) {
+        let $input = $child.find('input').length;
+        let $input_valid = $child.find('.valid').length;
+        let $button = $child.find('button, [type=submit]');
+
+        if ($input === $input_valid) {
             $button.removeClass('disabled');
         } else {
             $button.addClass('disabled');
         }
     }
     validationEmail(input, self) {
-        if(input.val().match(MAIL_FORMAT)) {
+        if(input.val().match(self.options.Email.format)) {
             self.initHelpers(input, true)
         } else {
-            self.initHelpers(input, false, 'Пока')
+            self.initHelpers(input, false, self.options.Email.helpers.format)
         }
     }
     validationPassword(input, self) {
-        let name = input.attr('name')
+        let name = input.attr('name');
+
         input.parents('.form').find(`[data-equalTo=${name}]`).val('').blur();
-        if (input.val().length > 8) {
-            self.initHelpers(input, true)
-        } else {
-            self.initHelpers(input, false, 'Минимум 8 символов')
-        }
+        self.lengthCheck(input, 'Password');
     }
     validationPasswordTwo(input, self) {
         let name = input.attr('data-equalTo');
+
         if(typeof name !== undefined){
             let $input_pass = input.parents('.form').find(`input[name='${name}']`);
             if (input.val() === $input_pass.val()) {
                 self.initHelpers(input, true)
             } else {
-                self.initHelpers(input, false, 'Пароли не совпадают')
+                self.initHelpers(input, false, self.options.PasswordConfirm.helpers.confirm)
             }
         }
     }
@@ -174,61 +229,92 @@ class Validation {
         if(input.prop('checked')) {
             self.initHelpers(input, true)
         } else {
-            self.initHelpers(input, false, 'Нужно согласится')
+            self.initHelpers(input, false, self.options.Checkbox.helpers.check)
         }
     }
-    validationText(input, self) {
-        if(input.val().length >= 3) {
+    validationField(input, self) {
+        switch(input.attr('data-field')) {
+            case 'name':
+                self.lengthCheck(input, 'Name');
+                break;
+            case 'surname':
+                self.lengthCheck(input, 'Surname');
+                break;
+            default:
+                console.error('not field text')
+                break;
+        }
+    }
+    validationEmpty(input, self) {
+        if(input.val().length > 0) {
             self.initHelpers(input, true)
         } else {
-            self.initHelpers(input, false, 'Не менее 3 символов')
+            self.initHelpers(input, false, self.options.Empty.helpers.empty)
         }
     }
-    initHelpers(input, valid, text = "Ошибка"){
-        let parent = input.parent(),
-            parentError = parent.find('.error')
-        if(valid) {
+    lengthCheck(input, key) {
+        let inputVal = input.val().length;
+
+        if (inputVal >= this.options[key].minLength && inputVal <= this.options[key].maxLength) {
+            this.initHelpers(input, true);
+        } else if (inputVal <= this.options[key].minLength) {
+            this.initHelpers(input, false, this.options[key].helpers.minLength);
+        } else if (inputVal >= this.options[key].maxLength) {
+            this.initHelpers(input, false, this.options[key].helpers.maxLength);
+        }
+    }
+    initHelpers(input, valid, text) {
+        let parent = input.parent();
+        let parentError = parent.find("." + this.options.validationClass.helpers.class);
+
+        if (valid) {
             parentError.remove();
-            input.addClass('valid').removeClass('invalid');
+            input.addClass(this.options.validationClass.success)
+                .removeClass(this.options.validationClass.error);
         } else {
-            if(parentError.length <= 0) {
-                parent.append(`<span class="error">${text}</span>`);
+            if (parentError.length <= 0) {
+                parent.append(`<span class="${this.options.validationClass.helpers.class}">${text}</span>`);
             }
-            input.removeClass('valid').addClass('invalid');
+            input.removeClass(this.options.validationClass.success)
+                .addClass(this.options.validationClass.error);
         }
     }
 
-    initElement(self = this) {
-        let elements = this.form.find('input');
-        let arr = [];
-        elements.each(function () {
-            let type = $(this).attr('type'),
-                $el = $(this);
-            if(typeof type !== undefined){
+    initElement() {
+        let elements = this.form.find('input, textarea');
+
+        elements.each((index, element) => {
+            let type = $(element).attr('type');
+            let $el = $(element);
+            if (typeof type !== undefined) {
                 switch (type) {
                     case 'email':
-                        self.setEvents($el, self.validationEmail);
+                        this.setEvents($el, this.validationEmail);
                         break;
+
                     case 'password':
-                        if($el.attr('data-equalTo') !== undefined) {
-                            self.setEvents($el, self.validationPasswordTwo)
+                        if ($el.attr('data-equalTo') !== undefined) {
+                            this.setEvents($el, this.validationPasswordTwo)
                         } else {
-                            self.setEvents($el, self.validationPassword)
+                            this.setEvents($el, this.validationPassword)
                         }
                         break;
+
                     case 'checkbox':
-                        self.setEvents($el, self.validationCheckBox);
+                        this.setEvents($el, this.validationCheckBox);
                         break;
+
                     case 'text':
-                        self.setEvents($el, self.validationCheckBox);
+                        this.setEvents($el, this.validationField);
                         break;
+
                     default:
-                        self.setEvents($el, self.validationText)
+                        this.setEvents($el, this.validationEmpty)
                         break;
                 }
             }
         });
     }
 }
-const validate = new Validation($('.form'))
+const validate = new Validation($('.form'));
 validate.initElement()

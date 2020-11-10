@@ -1,4 +1,4 @@
-<div id="login_modal" class="modal" style="display: none">
+<div id="login_modal" class="modal" style="display: block">
   <div class="overlay"></div>
   <div class="body">
     <div class="body__inner">
@@ -9,13 +9,18 @@
       </div>
       <h2>Вход</h2>
       <div id="form_login_user" class="form form1">
+        <!--<div class="form-row">
+          <label for="name1">Name</label>
+          <textarea name="" id="" cols="10" rows="5" value="asdasd"></textarea>
+        </div>-->
         <div class="form-row">
           <label for="user_login">Ваш email</label>
           <input id="user_login" data-input="email" name="tel" type="email" placeholder="mikel_ivanov98@gmail.com">
         </div>
         <div class="form-row">
           <label for="user_password">Пароль</label>
-          <input id="user_password" data-input="password" name="pass" type="password" placeholder="*************">
+          <input id="user_password" name="pass" type="password"
+                 placeholder="*************">
         </div>
         <div class="form-row">
           <button class="btn submit-form authorization disabled" type="submit">Войти</button>
@@ -25,7 +30,7 @@
   </div>
 </div>
 
-<div id="registration_modal" class="modal" style="display:block;">
+<div id="registration_modal" class="modal" style="display:none;">
   <div class="overlay"></div>
   <div class="body">
     <div class="body__inner">
@@ -36,6 +41,17 @@
       </div>
       <h2>Регистрация</h2>
       <div id="form_registration_user" class="form form2">
+
+        <div class="form-row">
+          <label for="name1">Name</label>
+          <input id="name1" data-field="name" data-input="email" name="name" type="text"
+                 placeholder="Igor">
+        </div>
+        <div class="form-row">
+          <label for="Surname1">Surname</label>
+          <input id="Surname1" data-field="surname" data-input="email" name="name" type="text"
+                 placeholder="Petrov">
+        </div>
         <div class="form-row">
           <label for="user_reg_email">Ваш email</label>
           <input id="user_reg_email" data-input="email" name="tel" type="email"
@@ -48,7 +64,8 @@
         </div>
         <div class="form-row">
           <label for="user_reg_password2">Пароль</label>
-          <input id="user_reg_password2" data-equalTo="pass" name="pass2" type="password"
+          <input id="user_reg_password2" data-equalTo="pass" name="pass2"
+                 type="password"
                  placeholder="*************" required>
         </div>
         <div class="form-row">

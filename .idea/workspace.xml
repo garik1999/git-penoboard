@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c7ebf61e-6c69-422c-8f0b-9b9f2db77b67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/main.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_modals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +73,8 @@
       <workItem from="1604649907345" duration="11234000" />
       <workItem from="1604909084426" duration="2247000" />
       <workItem from="1604913657781" duration="3039000" />
-      <workItem from="1604920659383" duration="7394000" />
+      <workItem from="1604920659383" duration="10417000" />
+      <workItem from="1604995566205" duration="20242000" />
     </task>
     <servers />
   </component>
@@ -86,6 +94,10 @@
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="469" y="310" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604398826179" />
+    <state x="219" y="23" width="921" height="822" key="CommitChangelistDialog2" timestamp="1604934420432">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="219" y="23" width="921" height="822" key="CommitChangelistDialog2/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604934420432" />
     <state x="235" y="68" key="SettingsEditor" timestamp="1604488332859">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
@@ -93,6 +105,14 @@
     <state x="221" y="68" key="SettingsEditor/0.23.1440.812@0.23.1440.812" timestamp="1603706626189" />
     <state x="235" y="68" key="SettingsEditor/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604488332859" />
     <state x="124" y="113" key="SettingsEditor/0.23.1440.877/-1920.23.1920.1002@0.23.1440.877" timestamp="1604416706556" />
+    <state x="56" y="84" width="1240" height="622" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1604934391428">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="56" y="84" width="1240" height="622" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604934391428" />
+    <state x="100" y="108" width="1240" height="622" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1604934391429">
+      <screen x="0" y="23" width="1440" height="822" />
+    </state>
+    <state x="100" y="108" width="1240" height="622" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.23.1440.822/-1920.23.1920.1057@0.23.1440.822" timestamp="1604934391429" />
     <state x="518" y="355" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604586708648">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
