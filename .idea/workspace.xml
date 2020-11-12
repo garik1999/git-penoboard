@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7ebf61e-6c69-422c-8f0b-9b9f2db77b67" name="Default Changelist" comment="" />
+    <list default="true" id="c7ebf61e-6c69-422c-8f0b-9b9f2db77b67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/libs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/libs.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/_modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/_modals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/validate.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +72,9 @@
       <workItem from="1604909084426" duration="2247000" />
       <workItem from="1604913657781" duration="3039000" />
       <workItem from="1604920659383" duration="10417000" />
-      <workItem from="1604995566205" duration="20583000" />
+      <workItem from="1604995566205" duration="21272000" />
+      <workItem from="1605035771038" duration="83000" />
+      <workItem from="1605082475402" duration="8412000" />
     </task>
     <servers />
   </component>

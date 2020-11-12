@@ -113,7 +113,7 @@ class Validation {
     constructor (form, options) {
         this.form = form;
 
-        this.options = Object.assign({
+        this.options = $.extend(true, {
             Empty: {
                 helpers: {
                     empty: "Нужно заполнить"
@@ -173,7 +173,7 @@ class Validation {
                     Number($('input[data-MaxlengthSurname]').attr('data-MaxlengthSurname')) || 10,
             },
         }, options || {});
-        console.log(this.options.Password.minLength)
+        // console.log(this.options.Password.minLength)
     }
     setEvents($el, callback, events = ""){
         let self = this;
@@ -254,7 +254,7 @@ class Validation {
     }
     lengthCheck(input, key) {
         let inputVal = input.val().length;
-
+        console.log(key)
         if (inputVal >= this.options[key].minLength && inputVal <= this.options[key].maxLength) {
             this.initHelpers(input, true);
         } else if (inputVal <= this.options[key].minLength) {
@@ -316,5 +316,9 @@ class Validation {
         });
     }
 }
-const validate = new Validation($('.form'));
+const validate = new Validation($('.form'), {
+    Password: {
+        minLength: 8
+    }
+});
 validate.initElement()
